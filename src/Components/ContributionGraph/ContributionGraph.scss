@@ -1,0 +1,75 @@
+.calendarWrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .calendar {
+        gap: 2px;
+        display: grid;
+        width: fit-content;
+
+
+        .month {
+            grid-row: 1;
+            display: flex;
+            color: #959494;
+            margin-right: 5px;
+            grid-column: 1/ 53;
+            justify-content: space-around;
+        }
+
+        .weekdays {
+            grid-row: 2/9;
+            font-size: 14px;
+            color: #959494;
+            grid-column: 1/2;
+            display: grid;
+            grid-template-rows: repeat(6, 17px);
+            &:first-child{
+                grid-row: 1;
+            }
+            :nth-child(2){
+                grid-row: 3;
+            }
+            :last-child{
+                grid-row: 5;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2px;
+            .day {
+                width: 15px;
+                height: 15px;
+                position: relative;
+
+                &:hover {
+                    cursor: pointer;
+                    border: 1px solid #00000080;
+                }
+
+                .infAccordion {
+                    top: -80px;
+                    left: 50%;
+                    z-index: 10;
+                    color: white;
+                    padding: 5px 10px;
+                    text-align: center;
+                    width: max-content;
+                    border-radius: 3px;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    background-color: #000000;
+                }
+            }
+
+            .day.selected {
+                border: 2px solid #000000E5;
+            }
+        }
+
+    }
+}
